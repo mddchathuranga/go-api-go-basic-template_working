@@ -222,6 +222,8 @@ github.com/mddchathuranga/DTEAlarmingPluginGoLang v1.0.12 h1:QUAmW9j+TuQSPl46Hg0
 github.com/mddchathuranga/DTEAlarmingPluginGoLang v1.0.12/go.mod h1:IVaqUXQ0k/rcbI+6wgauw+WWD57HBWoxLkNR1LGZJl0=
 github.com/mddchathuranga/DTEAlarmingPluginGoLang v1.0.13 h1:o5FfOWWedFaSFXFB5CTCeez6caKJCfJ8X/YKvqIcefs=
 github.com/mddchathuranga/DTEAlarmingPluginGoLang v1.0.13/go.mod h1:IVaqUXQ0k/rcbI+6wgauw+WWD57HBWoxLkNR1LGZJl0=
+github.com/mddchathuranga/DTEAlarmingPluginGoLang v1.0.14 h1:7AoxXV4p5z7IKTVqG2wwbg5XPmmdjNuX7HPBIti/sDc=
+github.com/mddchathuranga/DTEAlarmingPluginGoLang v1.0.14/go.mod h1:IVaqUXQ0k/rcbI+6wgauw+WWD57HBWoxLkNR1LGZJl0=
 github.com/mddchathuranga/DTELoggingPluginGoLang v1.0.0 h1:um93TtrW2yqHlYJC5vbQLByQWzB1fiCxsQ/8BMj7StI=
 github.com/mddchathuranga/DTELoggingPluginGoLang v1.0.0/go.mod h1:2qbQeXlMWbPeTT1ZIRDKiE5oPCxXSqH/AXXhxMro29k=
 github.com/mddchathuranga/DTELoggingPluginGoLang v1.0.1 h1:Yl4u7t+2hE1I+3F7dM3LjwEvg/nXnN4or+pxVgAa6jo=
@@ -240,6 +242,10 @@ github.com/mddchathuranga/DTELoggingPluginGoLang v1.0.13 h1:24N1v/NLcD1CMNOaf5py
 github.com/mddchathuranga/DTELoggingPluginGoLang v1.0.13/go.mod h1:2qbQeXlMWbPeTT1ZIRDKiE5oPCxXSqH/AXXhxMro29k=
 github.com/mddchathuranga/DTELoggingPluginGoLang v1.0.14 h1:Wp0eOaWqxWfxrQGvQYG/GAe/DXmpU7zymGAK2tE+Zog=
 github.com/mddchathuranga/DTELoggingPluginGoLang v1.0.14/go.mod h1:2qbQeXlMWbPeTT1ZIRDKiE5oPCxXSqH/AXXhxMro29k=
+github.com/mddchathuranga/DTELoggingPluginGoLang v1.0.15 h1:JgHB1wPo096SgI7KgOBBuj4t2GH+0OSgH8LxKlQHqTk=
+github.com/mddchathuranga/DTELoggingPluginGoLang v1.0.15/go.mod h1:2qbQeXlMWbPeTT1ZIRDKiE5oPCxXSqH/AXXhxMro29k=
+github.com/mddchathuranga/DTELoggingPluginGoLang v1.0.16 h1:Pnl4e87sWbmNaD8otjkEl86VBDKy4QLgKK9uoMbU4Zo=
+github.com/mddchathuranga/DTELoggingPluginGoLang v1.0.16/go.mod h1:2qbQeXlMWbPeTT1ZIRDKiE5oPCxXSqH/AXXhxMro29k=
 github.com/mitchellh/mapstructure v1.5.0 h1:jeMsZIYE/09sWLaz43PL7Gy6RuMjD2eJVyuac5Z2hdY=
 github.com/mitchellh/mapstructure v1.5.0/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
 github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421/go.mod h1:6dJC0mAP4ikYIbvyc7fijjWJddQyLn8Ig3JB5CqoB9Q=

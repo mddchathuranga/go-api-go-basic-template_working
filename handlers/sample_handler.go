@@ -9,6 +9,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/mddchathuranga/DTEAlarmingPluginGoLang/alarmer"
+	"github.com/mddchathuranga/DTELoggingPluginGoLang/logging"
 )
 
 // IntergrationHandler is an API endpoint that processes a sample request and returns a response.
@@ -24,18 +26,29 @@ import (
 // @Failure 500 {object} utilities.ErrorResponse
 // @Router /action [post]
 func IntergrationHandler(c *gin.Context) {
+
+	logger := logging.GetLogger() // Get the initialized logger instance
 	var sampleRequestEntity dtos.SampleRequestEntity
 	if err := c.ShouldBindJSON(&sampleRequestEntity); err != nil {
-		c.JSON(http.StatusBadRequest, utilities.ErrorResponse{Message: "invalid request payload"})
+
+		alarmer.CreateAlarmEx(err.Error())
+		logger.Error(err)
+		c.JSON(http.StatusBadRequest, utilities.ErrorResponse{Message: err.Error()})
 		return
 	}
 
 	//validate the request
 	if err := validators.Validate(sampleRequestEntity); err != nil {
+
+		alarmer.CreateAlarmEx(err.Error())
+		logger.Error(err)
 		c.JSON(http.StatusBadRequest, utilities.ErrorResponse{Message: err.Error()})
 		return
 
 	}
+
+	logger.Info("SampleReqestEntity is :", sampleRequestEntity)
+
 	// Call domain business logic
 	sampleResponseEntity := services.Process(sampleRequestEntity)
 
