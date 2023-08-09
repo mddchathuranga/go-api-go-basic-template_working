@@ -33,10 +33,10 @@ func IntergrationHandler(c *gin.Context) {
 
 		alarmer.CreateAlarmEx(err.Error())
 		logger.Error(err)
-		c.JSON(http.StatusBadRequest, utilities.ErrorResponse{Message: err.Error()})
+		c.JSON(http.StatusBadRequest, utilities.ErrorResponse{Message: "invalid request payload"})
 		return
 	}
-
+	logger.Info("SampleReqestEntity is :", sampleRequestEntity)
 	//validate the request
 	if err := validators.Validate(sampleRequestEntity); err != nil {
 
@@ -47,10 +47,10 @@ func IntergrationHandler(c *gin.Context) {
 
 	}
 
-	logger.Info("SampleReqestEntity is :", sampleRequestEntity)
-
 	// Call domain business logic
 	sampleResponseEntity := services.Process(sampleRequestEntity)
+
+	logger.Info("SampleResponseEntity is :", sampleResponseEntity)
 
 	// Return the response
 	switch sampleResponseEntity.ResCode {

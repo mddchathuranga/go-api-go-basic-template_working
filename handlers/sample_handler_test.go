@@ -18,7 +18,7 @@ func TestIntergrationHandler(t *testing.T) {
 	router.POST("/action", IntergrationHandler)
 
 	// Create a sample request JSON payload
-	requestPayload := `{"id": 123}`
+	requestPayload := `{"id": 1}`
 
 	// Create a new HTTP request with the sample payload
 	req, err := http.NewRequest("POST", "/action", bytes.NewBufferString(requestPayload))
