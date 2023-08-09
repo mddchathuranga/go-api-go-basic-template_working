@@ -1,0 +1,1 @@
+	 2goXhrdtos/sample_response_dto.go

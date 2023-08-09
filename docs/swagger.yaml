@@ -1,0 +1,58 @@
+definitions:
+  dtos.SampleRequestEntity:
+    properties:
+      id:
+        type: integer
+    type: object
+  dtos.SampleResponseEntity:
+    properties:
+      errorMessage:
+        type: string
+      resCode:
+        type: string
+      resDesc:
+        type: string
+    type: object
+  utilities.ErrorResponse:
+    properties:
+      message:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /action:
+    post:
+      consumes:
+      - application/json
+      description: This endpoint processes a sample request and returns a response.
+      parameters:
+      - description: Sample Request Body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dtos.SampleRequestEntity'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dtos.SampleResponseEntity'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utilities.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/utilities.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/utilities.ErrorResponse'
+      summary: Process a sample request
+      tags:
+      - Basic Template
+swagger: "2.0"
