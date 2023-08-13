@@ -1,16 +1,16 @@
 package handlers
 
 import (
+	"com/adl/et/telco/dte/template/baseapp/alarm"
 	_ "com/adl/et/telco/dte/template/baseapp/docs"
 	"com/adl/et/telco/dte/template/baseapp/dtos"
+	"com/adl/et/telco/dte/template/baseapp/log"
 	"com/adl/et/telco/dte/template/baseapp/services"
 	"com/adl/et/telco/dte/template/baseapp/utilities"
 	"com/adl/et/telco/dte/template/baseapp/validators"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/mddchathuranga/DTEAlarmingPluginGoLang/alarmer"
-	"github.com/mddchathuranga/DTELoggingPluginGoLang/logging"
 )
 
 // IntergrationHandler is an API endpoint that processes a sample request and returns a response.
@@ -27,11 +27,11 @@ import (
 // @Router /action [post]
 func IntergrationHandler(c *gin.Context) {
 
-	logger := logging.GetLogger() // Get the initialized logger instance
+	logger := log.GetLogger() // Get the initialized logger instance
 	var sampleRequestEntity dtos.SampleRequestEntity
 	if err := c.ShouldBindJSON(&sampleRequestEntity); err != nil {
 
-		alarmer.CreateAlarmEx(err.Error())
+		alarm.CreateAlarmEx(err.Error())
 		logger.Error(err)
 		c.JSON(http.StatusBadRequest, utilities.ErrorResponse{Message: "invalid request payload"})
 		return
@@ -40,7 +40,7 @@ func IntergrationHandler(c *gin.Context) {
 	//validate the request
 	if err := validators.Validate(sampleRequestEntity); err != nil {
 
-		alarmer.CreateAlarmEx(err.Error())
+		alarm.CreateAlarmEx(err.Error())
 		logger.Error(err)
 		c.JSON(http.StatusBadRequest, utilities.ErrorResponse{Message: err.Error()})
 		return
