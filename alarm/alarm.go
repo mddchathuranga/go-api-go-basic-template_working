@@ -29,7 +29,7 @@ func InitializeAlarm() error {
 	viper.SetConfigName("config") // Name of the configuration file without extension
 	viper.AddConfigPath(".")      // Search the current directory for the configuration file
 	if err := viper.ReadInConfig(); err != nil {
-		return fmt.Errorf("error reading config file: %v", err)
+		panic(err)
 	}
 
 	logLevel := viper.GetString("DTE.Alarm.Level")
